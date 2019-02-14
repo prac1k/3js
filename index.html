@@ -31,60 +31,22 @@
    var camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 0.1, 500 );
    camera.position.set( 0, 0, 100 );
    camera.lookAt( 0, 10, 0 );
-
    var scene = new THREE.Scene();
 
-   //object-cube
-   // var geometry = new THREE.BoxGeometry( 1, 1, 1 );
-   // var material = new THREE.MeshBasicMaterial( { color: 0x4286f4} );
-   // var cube = new THREE.Mesh( geometry, material );
-   // scene.add( cube );
-   // camera.position.z = 7;
-
-
    // sphere
-
    var geometry = new THREE.SphereGeometry( 0.4, 28, 46 );
    var material = new THREE.MeshBasicMaterial( {color: 0x4286f4} );
    var sphere = new THREE.Mesh( geometry, material );
+   material.map    = THREE.ImageUtils.loadTexture('textures/planet.jpg')
    scene.add( sphere );
    camera.position.z = 1;
 
    // circle
-
    var geometry = new THREE.RingGeometry( 0.5, 0.6, 100 );
    var material = new THREE.MeshBasicMaterial( { color: 0xffff00, side: THREE.DoubleSide } );
    var cirlce = new THREE.Mesh( geometry, material );
    scene.add( cirlce );
    camera.position.z = 2;
-
-   // object circle
-
-   // var geometry = new THREE.CircleGeometry( 2, 200);
-   // var material = new THREE.MeshBasicMaterial( { color: 0xffff00 } );
-   // var circle = new THREE.Mesh( geometry, material );
-   // scene.add( circle );
-
-   //create a red LineBasicMaterial
-   // var material = new THREE.LineBasicMaterial( { color: 0xFF0000 } );
-   // var geometry = new THREE.Geometry();
-   // geometry.vertices.push(new THREE.Vector3( -10, 0, 0, 0) );
-   // geometry.vertices.push(new THREE.Vector3( 0, 10, 0, 0) );
-   // geometry.vertices.push(new THREE.Vector3( 10, 0, 0, 0) );
-   // geometry.vertices.push(new THREE.Vector3( 0, 0, 0, 10) );
-   // var line = new THREE.Line( geometry, material );
-   // scene.add( line );
-   // camera.position.z = 5;
-   // //line 2
-   // var material = new THREE.LineBasicMaterial( { color: 0xFF0000 } );
-   // var geometry = new THREE.Geometry();
-   // geometry.vertices.push(new THREE.Vector3( -20, 10, 10) );
-   // geometry.vertices.push(new THREE.Vector3( 10, 20, 10) );
-   // geometry.vertices.push(new THREE.Vector3( 20, 10, 10) );
-   // var line2 = new THREE.Line( geometry, material );
-   // scene.add( line2 );
-   // camera.position.z = 4;
-   // renderer.render( scene, camera );
 
    //animate
    var animate = function animate() {
@@ -102,9 +64,6 @@
        // line2.rotation.y += 0.01;
    }
    animate();
-
-
-
 
 </script>
 </body>
