@@ -36,8 +36,9 @@
    // sphere
    var geometry = new THREE.SphereGeometry( 0.4, 28, 46 );
    var material = new THREE.MeshBasicMaterial( {color: 0x4286f4} );
-   var sphere = new THREE.Mesh( geometry, material );
    material.map    = THREE.ImageUtils.loadTexture('textures/planet.jpg')
+   var sphere = new THREE.Mesh( geometry, material );
+
    scene.add( sphere );
    camera.position.z = 1;
 
