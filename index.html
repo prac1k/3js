@@ -11,20 +11,9 @@
 <body>
 <script src="js/three.js"></script>
 <script src="js/WebGL.js"></script>
+<script src="js/OrbitControl.js"></script>
 <script>
 
-   // //camera
-   //  var scene = new THREE.Scene();
-   //  var camera = new THREE.PerspectiveCamera( 86, window.innerWidth / window.innerHeight, 0.1, 1000 );
-   //  var renderer = new THREE.WebGLRenderer();
-   //  renderer.setSize( window.innerWidth, window.innerHeight );
-   // if ( WEBGL.isWebGL2Available() === false ) {
-   // document.body.appendChild( WEBGL.getWebGL2ErrorMessage() );
-   // }
-   // else
-   //     document.body.appendChild( renderer.domElement );
-
-   //new-camera
    var renderer = new THREE.WebGLRenderer();
    renderer.setSize( window.innerWidth, window.innerHeight );
    document.body.appendChild( renderer.domElement );
@@ -40,7 +29,6 @@
    material.crossOrigin = "anonymous";
    material.map    = THREE.ImageUtils.loadTexture('textures/planet.jpg')
    var sphere = new THREE.Mesh( geometry, material );
-
    scene.add( sphere );
    camera.position.z = 1;
 
@@ -65,6 +53,8 @@
    }
    animate();
 
+   // added mouse control
+   var controls = new THREE.OrbitControls( camera, renderer.domElement );
 
 </script>
 </body>
