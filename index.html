@@ -45,7 +45,9 @@
 
    // circle
    var geometry = new THREE.RingGeometry( 0.5, 0.6, 100 );
-   var material = new THREE.MeshBasicMaterial( { color: 0xffff00, side: THREE.DoubleSide } );
+   var material = new THREE.MeshBasicMaterial( {side: THREE.DoubleSide, transparent: true} );
+   material.crossOrigin = "anonymous";
+   material.map    = THREE.ImageUtils.loadTexture('textures/ring.png')
    var cirlce = new THREE.Mesh( geometry, material );
    scene.add( cirlce );
    camera.position.z = 2;
