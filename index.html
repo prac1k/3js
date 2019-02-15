@@ -57,14 +57,18 @@
    var animate = function animate() {
        requestAnimationFrame( animate );
        renderer.render( scene, camera );
-       camera.rotation.x += 0.02;
-       scene.rotation.y += 0.03;
+       //movement of the chamber
+       camera.rotation.x += 0.002;
+       scene.rotation.y += 0.003;
+       //jupiter rotation
        sphere_jupiter.rotation.x += 0.01;
        sphere_jupiter.rotation.y += 0.01;
        sphere_jupiter.position.set(2, 4, 0);
+       //jupiter 3d ring rotation
        torus.rotation.y += 0.005;
        torus.rotation.x += 0.007;
        torus.position.set(2, 4, 0);
+       //sun rotation
        sun.rotation.x += 0.01;
        sun.rotation.y += 0.01;
        sun.position.set(6, 7, 10);
