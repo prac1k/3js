@@ -14,16 +14,21 @@
 <script src="js/OrbitControl.js"></script>
 <script>
 
+
    var renderer = new THREE.WebGLRenderer();
    renderer.setSize( window.innerWidth, window.innerHeight );
    document.body.appendChild( renderer.domElement );
    var camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 0.1, 500 );
-   camera.position.set( 0, 0, 100 );
+   camera.position.set( 10, 15, 7 ); //camera position
    camera.lookAt( 0, 10, 0 );
    var scene = new THREE.Scene();
    scene.background = new THREE.ImageUtils.loadTexture('textures/background.jpg');
 
-   // sphere- jupiter
+   //axes helper
+   //var axesHelper = new THREE.AxesHelper( 5 );
+   //scene.add( axesHelper );
+
+   // sphere-jupiter
    var geometry = new THREE.SphereGeometry( 0.4, 28, 46 );
    var material = new THREE.MeshBasicMaterial();
    material.crossOrigin = "anonymous";
@@ -41,7 +46,7 @@
    scene.add( torus );
    camera.position.z = 5;
 
-   //sphere- sun
+   //sphere-sun
    var geometry = new THREE.SphereGeometry( 0.8, 28, 46 );
    var material = new THREE.MeshBasicMaterial();
    material.crossOrigin = "anonymous";
@@ -79,10 +84,12 @@
        sun.rotation.x += 0.01;
        sun.rotation.y += 0.01;
        sun.position.set(6, 7, 10);
-
+       //dimasales rotation
        dimas.rotation.x += 0.01;
        dimas.rotation.y += 0.01;
        dimas.position.set(3, 15, 2);
+       //letters
+
    }
    animate();
 
