@@ -50,7 +50,14 @@
    scene.add( sun );
    camera.position.z = 4;
 
-
+   //sphere-dima sales
+   var geometry = new THREE.SphereGeometry( 0.8, 28, 46 );
+   var material = new THREE.MeshBasicMaterial();
+   material.crossOrigin = "anonymous";
+   material.map    = THREE.ImageUtils.loadTexture('textures/d2.jpg')
+   var dimas = new THREE.Mesh( geometry, material );
+   scene.add( dimas );
+   camera.position.z = 4;
 
 
    //animate
@@ -72,6 +79,10 @@
        sun.rotation.x += 0.01;
        sun.rotation.y += 0.01;
        sun.position.set(6, 7, 10);
+
+       dimas.rotation.x += 0.01;
+       dimas.rotation.y += 0.01;
+       dimas.position.set(3, 15, 2);
    }
    animate();
 
