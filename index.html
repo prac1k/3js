@@ -41,7 +41,7 @@
    // scene.add( sun );
    // camera.position.z = 4;
 
-   var geometry = new THREE.TorusGeometry( 0.6, 0.05, 0.2, 100 );
+   var geometry = new THREE.TorusGeometry( 0.6, 0.05, 0.2, 100, 5.1 ); //outer size, inner size, radialSegments, tubularSegments, arc
    var material = new THREE.MeshBasicMaterial( {transparent: true, opacity: 3} );
    material.crossOrigin = "anonymous";
    material.map = THREE.ImageUtils.loadTexture('textures/ring.png');
@@ -56,8 +56,10 @@
        renderer.render( scene, camera );
        sphere_jupiter.rotation.x += 0.01;
        sphere_jupiter.rotation.y += 0.01;
+       sphere_jupiter.position.set(10, 10, 0);
        torus.rotation.y += 0.005;
        torus.rotation.x += 0.007;
+       torus.position.set(10, 10, 0);
    }
    animate();
 
