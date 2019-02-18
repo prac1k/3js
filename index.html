@@ -73,9 +73,9 @@
 
    //star2-kovsh
    var geometry = new THREE.TorusKnotGeometry( 2, 0.7, 34, 6, 11, 9 );
-   var material = new THREE.MeshBasicMaterial( { color: 0xf4e842 } );
+   var material = new THREE.MeshBasicMaterial( { color: 0xffffff } );
    var star2 = new THREE.Mesh( geometry, material );
-   star2.geometry.scale(0.02, 0.02, 0.02)
+   star2.geometry.scale(0.01, 0.01, 0.01)
    scene.add( star2 );
 
    //star3-kovsh
@@ -137,8 +137,8 @@
        requestAnimationFrame( animate );
        renderer.render( scene, camera );
        //movement of the chamber
-       //camera.rotation.x += 0.004;
-       //scene.rotation.y += 0.003;
+       camera.rotation.x += 0.004;
+       scene.rotation.y += 0.003;
        //jupiter rotation
        sphere_jupiter.rotation.x += 0.01;
        sphere_jupiter.rotation.y += 0.01;
@@ -168,42 +168,42 @@
        star2.rotation.x += 0.001;
        star2.rotation.y += 0.001;
        star2.position.set(5, -5, 120);
-       star2.translateZ( 0.1 );
+       star2.translateZ( -0.1 );
        //star3-kovsh
        star3.rotation.x += 0.001;
        star3.rotation.y += 0.001;
        star3.position.set(5, -4, 120);
-       star3.translateZ( 0.1 );
+       star3.translateZ( -0.1 );
        //star4-kovsh
        star4.rotation.x += 0.001;
        star4.rotation.y += 0.001;
        star4.position.set(4, -3, 120);
-       star4.translateZ( 0.1 );
+       star4.translateZ( -0.1 );
        //star5-kovsh
        star5.rotation.x += 0.001;
        star5.rotation.y += 0.001;
        star5.position.set(3, -2, 120);
-       star5.translateZ( 0.1 );
+       star5.translateZ( -0.1 );
        //star6-kovsh
        star6.rotation.x += 0.001;
        star6.rotation.y += 0.001;
        star6.position.set(1, -2, 120);
-       star6.translateZ( 0.1 );
+       star6.translateZ( -0.1 );
        //star7-kovsh
        star7.rotation.x += 0.001;
        star7.rotation.y += 0.001;
        star7.position.set(3, 2, 120);
-       star7.translateZ( 0.1 );
+       star7.translateZ( -0.1 );
        //star8-kovsh
        star8.rotation.x += 0.001;
        star8.rotation.y += 0.001;
        star8.position.set(1, 2, 120);
-       star8.translateZ( 0.1 );
+       star8.translateZ( -0.1 );
        //star9
        star9.rotation.x += 0.001;
        star9.rotation.y += 0.001;
        star9.position.set(170, -10, 90);
-       star9.translateZ( 0.1 );
+       star9.translateZ( -0.1 );
 
    }
    animate();
