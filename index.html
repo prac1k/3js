@@ -42,8 +42,8 @@
    var material = new THREE.MeshBasicMaterial( {transparent: true, opacity: 3} );
    material.crossOrigin = "anonymous";
    material.map = THREE.ImageUtils.loadTexture('textures/ring.png');
-   var torus = new THREE.Mesh( geometry, material );
-   scene.add( torus );
+   var jupring = new THREE.Mesh( geometry, material );
+   scene.add( jupring );
    camera.position.z = 5;
 
    //sphere-sun
@@ -64,31 +64,49 @@
    scene.add( dimas );
    camera.position.z = 4;
 
+   //star1
+   var geometry = new THREE.TorusKnotGeometry( 2, 0.7, 34, 6, 11, 9 );
+   var material = new THREE.MeshBasicMaterial( { color: 0xf4e842 } );
+   var star1 = new THREE.Mesh( geometry, material );
+   star1.geometry.scale(0.02, 0.02, 0.02)
+   scene.add( star1 );
+
+   //UFO
+
+
 
    //animate
    var animate = function animate() {
        requestAnimationFrame( animate );
        renderer.render( scene, camera );
        //movement of the chamber
-       camera.rotation.x += 0.002;
+       camera.rotation.x += 0.004;
        scene.rotation.y += 0.003;
        //jupiter rotation
        sphere_jupiter.rotation.x += 0.01;
        sphere_jupiter.rotation.y += 0.01;
        sphere_jupiter.position.set(2, 4, 0);
+       sphere_jupiter.translateZ( 4 );
        //jupiter 3d ring rotation
-       torus.rotation.y += 0.005;
-       torus.rotation.x += 0.007;
-       torus.position.set(2, 4, 0);
+       jupring.rotation.y += 0.01;
+       jupring.rotation.x += 0.01;
+       jupring.position.set(2, 4, 0);
+       jupring.translateZ( 4 );
        //sun rotation
        sun.rotation.x += 0.01;
        sun.rotation.y += 0.01;
        sun.position.set(6, 7, 10);
+       sun.translateZ( 1 );
        //dimasales rotation
        dimas.rotation.x += 0.01;
        dimas.rotation.y += 0.01;
        dimas.position.set(3, 15, 2);
-       //letters
+       dimas.translateZ( 5 );
+       //star1
+       star1.rotation.x += 0.001;
+       star1.rotation.y += 0.001;
+       star1.position.set(70, 150, 80);
+       star1.translateZ( 0.1 );
 
    }
    animate();
